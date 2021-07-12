@@ -100,13 +100,6 @@ public class HazmatChestPiece extends DyeableArmorItem implements ArmorBlockEnti
         }
     }
 
-    @Override
-    public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
-    if (getColor(stack) == 10511680) {
-        setColor(stack, 16351261); //orange
-    }
-    }
-
     private void disableFireResist(PlayerEntity playerEntity){
         if (!playerEntity.getEntityWorld().isClient()) {
             playerEntity.removeStatusEffect(StatusEffects.FIRE_RESISTANCE);
@@ -241,6 +234,11 @@ public class HazmatChestPiece extends DyeableArmorItem implements ArmorBlockEnti
     @Override
     public void onRemoved(PlayerEntity playerEntity) {
         removeEffects(playerEntity);
+    }
+
+    @Override
+    public int getColor(ItemStack stack) {
+        return super.getColor(stack) + 16777215 - DEFAULT_COLOR;
     }
 }
 
