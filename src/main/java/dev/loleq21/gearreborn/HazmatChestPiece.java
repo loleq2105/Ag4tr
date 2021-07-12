@@ -209,7 +209,7 @@ public class HazmatChestPiece extends DyeableArmorItem implements ArmorBlockEnti
         LiteralText line1 = new LiteralText(String.valueOf((getStoredAir4ToolTip(stack)*100)/airCapacity));
         line1.append("%");
         line1.append(" ");
-        line1.append(new TranslatableText("gearreborn.misc.rhmchestplateairpressure"));
+        line1.append(new TranslatableText("gearreborn.misc.hazmatchestplateairpressure"));
         line1.formatted(Formatting.AQUA);
         tooltip.add(1, line1);
     }
